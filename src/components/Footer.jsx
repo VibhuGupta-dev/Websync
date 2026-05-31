@@ -144,7 +144,7 @@ export function Footer() {
             +91 9044429919
           </p>
           <p className="text-white/40 text-[15px] tracking-[0.1em]">
-            Websync.co@gmail.com
+            websync.co@gmail.com
           </p>
         </div>
 

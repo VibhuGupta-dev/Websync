@@ -80,7 +80,7 @@ export function Services() {
   return (
     <section
       ref={sectionRef}
-      className="service relative z-40 bg-[#f5f0e8] overflow-visible mb-20 pb-20"
+      className="service relative z-40 bg-[#f5f0e8] overflow-visible  pb-20"
       style={{ boxShadow: "0 -32px 80px rgba(0,0,0,0.14)" }}
     >
       <div
@@ -105,7 +105,7 @@ export function Services() {
       {/* FlowingMenu wrapper — height px mein fixed but zoom-safe */}
       <div
         className="hidden md:block w-full"
-        style={{  height: `${services.length * 13}vh` }}
+        style={{  height: `${services.length * 10}vh` }}
       >
         <FlowingMenu
           items={services}
