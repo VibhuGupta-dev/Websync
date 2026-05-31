@@ -127,33 +127,33 @@ export function Footer() {
       >
         {/* Left: copyright */}
         <div>
-          <p className="text-white/30 text-[11px] uppercase tracking-[0.15em] leading-relaxed">
-            © 2025 – Copyright
+          <p className="text-white/30 text-[15px] uppercase tracking-[0.15em] leading-relaxed">
+            © 2026 – Copyright
           </p>
-          <p className="text-white/30 text-[11px] uppercase tracking-[0.15em]">
+          <p className="text-white/30 text-[15px] uppercase tracking-[0.15em]">
             All Rights Reserved
           </p>
         </div>
 
         {/* Center: contact */}
         <div>
-          <p className="text-white/60 text-[21px] uppercase tracking-[0.2em] mb-2 font-medium">
+          <p className="text-white/60 text-[15px] uppercase tracking-[0.2em] mb-2 font-medium">
             Contact Us
           </p>
-          <p className="text-white/40 text-[21px] tracking-[0.1em]">
+          <p className="text-white/40 text-[15px] tracking-[0.1em]">
             +91 9044429919
           </p>
-          <p className="text-white/40 text-[21px] tracking-[0.1em]">
+          <p className="text-white/40 text-[15px] tracking-[0.1em]">
             Websync.co@gmail.com
           </p>
         </div>
 
         {/* Right: location */}
         <div>
-          <p className="text-white/60 text-[11px] uppercase tracking-[0.2em] mb-2 font-medium">
+          <p className="text-white/60 text-[15px] uppercase tracking-[0.2em] mb-2 font-medium">
             Location
           </p>
-          <p className="text-white/40 text-[11px] tracking-[0.1em] leading-relaxed">
+          <p className="text-white/40 text-[15px] tracking-[0.1em] leading-relaxed">
             Lucknow, Uttar Pradesh,<br />
             India — 226001
           </p>

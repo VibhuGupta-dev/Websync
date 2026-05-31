@@ -187,6 +187,7 @@ export function ClientReviews() {
 
   return (
     <section
+    
       ref={sectionRef}
       className="client-reviews relative z-50 bg-[#f5f0e8] px-4 sm:px-8 md:px-16 lg:px-24 pt-14 pb-20 sm:pt-20 sm:pb-28"
       style={{ boxShadow: "0 -32px 80px rgba(0,0,0,0.14)" }}

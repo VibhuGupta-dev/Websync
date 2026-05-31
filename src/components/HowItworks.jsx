@@ -11,8 +11,6 @@ export function HowItWork() {
   const counterRef = useRef(null);
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
     const section = sectionRef.current;
     if (!section) return;
 
@@ -20,7 +18,6 @@ export function HowItWork() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          
           if (counterRef.current) {
             let count = 0;
             const target = 40;
@@ -42,7 +39,7 @@ export function HowItWork() {
   }, []);
 
   const sideBlocks = ["Strategy", "Design", "Dev", "Launch", "Growth"];
-  const lines = ["YOU BRING", "THE IDEA.", "WE BUILD", "THE WEBSITE" , "in 21 days"];
+  const lines = ["YOU BRING", "THE IDEA.", "WE BUILD", "THE WEBSITE", "in 21 days"];
 
   const stats = [
     { value: null, counter: true, label: "Projects Delivered" },
@@ -53,21 +50,24 @@ export function HowItWork() {
   return (
     <section
       ref={sectionRef}
-      className="howitwork  z-20 min-h-screen bg-[#f5f0e8] flex flex-col justify-center
-        px-6 sm:px-10 md:px-16 lg:px-24 py-16"
+      className="howitwork relative z-20 bg-[#f5f0e8] flex flex-col justify-center px-4 sm:px-10 md:px-16 lg:px-24"
       style={{
         boxShadow: "0 -32px 80px rgba(0,0,0,0.14)",
         overflowX: "hidden",
+        minHeight: "100dvh",
+        paddingTop: "clamp(3rem, 8dvh, 5rem)",
+        paddingBottom: "clamp(3rem, 8dvh, 5rem)",
       }}
     >
-      {/* Decorative top border line */}
+      {/* Top border */}
       <div
-        className={`absolute top-0 left-0 h-[2px] bg-black transition-all duration-1000 origin-left
-          ${visible ? "w-full" : "w-0"}`}
+        className={`absolute top-0 left-0 h-[2px] bg-black transition-all duration-1000 origin-left ${
+          visible ? "w-full" : "w-0"
+        }`}
         style={{ transitionDelay: "200ms" }}
       />
 
-      {/* Decorative corner tick marks */}
+      {/* Corner ticks */}
       <div className="absolute top-6 left-6 w-4 h-4 border-t-2 border-l-2 border-black/20" />
       <div className="absolute top-6 right-6 w-4 h-4 border-t-2 border-r-2 border-black/20" />
 
@@ -84,59 +84,57 @@ export function HowItWork() {
           Web Agency Est. 2024
         </div>
 
-        {/* ── TOP ROW: heading + stats ── */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10 sm:mb-14">
-
-          {/* HEADING */}
+        {/* TOP ROW */}
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 sm:gap-6 mb-6 sm:mb-10">
           <div
-            className={`transition-all duration-500
-              ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+            className={`transition-all duration-500 ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
             style={{ transitionDelay: "80ms" }}
           >
-            <p className="uppercase tracking-[0.45em] text-[15px] text-neutral-900 mb-1.5">
+            <p className="uppercase tracking-[0.45em] text-[11px] sm:text-[13px] text-neutral-900 mb-1">
               About
             </p>
             <h2
               className="uppercase leading-none text-black m-0"
               style={{
                 fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "clamp(3rem, 9vw, 6rem)",
+                fontSize: "clamp(2rem, 6vw, 4.5rem)",
                 letterSpacing: "0.05em",
               }}
             >
               Websync
             </h2>
-            {/* Animated underline */}
-            <div className="relative mt-2.5 h-[3px] w-24 bg-black/8 overflow-hidden rounded-full">
+            <div className="relative mt-2 h-[3px] w-20 bg-black/8 overflow-hidden rounded-full">
               <div
-                className={`absolute inset-y-0 left-0 bg-[#b3f000] transition-all duration-700 origin-left rounded-full
-                  ${visible ? "w-full" : "w-0"}`}
+                className={`absolute inset-y-0 left-0 bg-[#b3f000] transition-all duration-700 origin-left rounded-full ${
+                  visible ? "w-full" : "w-0"
+                }`}
                 style={{ transitionDelay: "500ms" }}
               />
             </div>
           </div>
 
-          {/* STATS ROW */}
+          {/* Stats */}
           <div
-            className={`flex gap-6 sm:gap-8 transition-all duration-500
-              ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`flex gap-4 sm:gap-8 transition-all duration-500 ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
             style={{ transitionDelay: "600ms" }}
           >
             {stats.map((stat, i) => (
-              <div key={i} className="flex flex-col  items-start sm:items-end">
+              <div key={i} className="flex flex-col items-start sm:items-end">
                 <span
                   className="text-black leading-none"
                   style={{
                     fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+                    fontSize: "clamp(1.4rem, 3vw, 2.4rem)",
                     letterSpacing: "0.02em",
                   }}
                 >
-                  {stat.counter ? (
-                    <span ref={counterRef}>0+</span>
-                  ) : stat.value}
+                  {stat.counter ? <span ref={counterRef}>0+</span> : stat.value}
                 </span>
-                <span className="text-[0.55rem] font-bold uppercase tracking-[0.18em] text-black/50 mt-0.5">
+                <span className="text-[0.5rem] font-bold uppercase tracking-[0.15em] text-black/50 mt-0.5">
                   {stat.label}
                 </span>
               </div>
@@ -144,23 +142,22 @@ export function HowItWork() {
           </div>
         </div>
 
-        {/* ── DIVIDER ── */}
+        {/* Divider */}
         <div
-          className={`w-full h-px bg-black/10 mb-10 sm:mb-14 transition-all duration-700 origin-left
-            ${visible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"}`}
+          className={`w-full h-px bg-black/10 mb-6 sm:mb-10 transition-all duration-700 origin-left ${
+            visible ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
+          }`}
           style={{ transitionDelay: "400ms" }}
         />
 
-        {/* ── MAIN ROW: headline + side blocks ── */}
-        <div className="flex items-center gap-4 sm:gap-8 overflow-hidden">
-
-          {/* Headline */}
+        {/* MAIN ROW */}
+        <div className="flex items-center gap-3 sm:gap-8 overflow-hidden">
           <div className="relative flex-1 min-w-0">
 
             {/* Sticker */}
             <div
-              className={`absolute -top-7 -left-1 sm:-top-9 sm:-left-2 bg-[#b3f000] text-black uppercase
-                text-[0.72rem] sm:text-[0.88rem] tracking-widest px-2.5 py-1 sm:px-3 sm:py-1.5
+              className={`absolute -top-5 -left-1 sm:-top-7 sm:-left-2 bg-[#b3f000] text-black uppercase
+                text-[0.6rem] sm:text-[0.8rem] tracking-widest px-2 py-0.5 sm:px-3 sm:py-1
                 z-10 rotate-[-12deg] transition-all duration-500 origin-center
                 ${visible ? "opacity-100 scale-90" : "opacity-0 scale-50"}`}
               style={{
@@ -178,33 +175,33 @@ export function HowItWork() {
                 key={i}
                 ref={(el) => { if (el) lineRefs.current[i] = el; }}
                 className="overflow-hidden"
-                style={{ lineHeight: 0.88 }}
+                style={{ lineHeight: 0.9 }}
               >
                 <span
-                  className={`block uppercase text-black transition-transform duration-700
-                    ${visible ? "translate-y-0" : "translate-y-full"}`}
+                  className={`block uppercase text-black transition-transform duration-700 ${
+                    visible ? "translate-y-0" : "translate-y-full"
+                  }`}
                   style={{
                     fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: "clamp(2.8rem, 9.5vw, 6rem)",
+                    fontSize: "clamp(1.8rem, 6.5vw, 4.5rem)",
                     letterSpacing: "-0.015em",
                     transitionDelay: `${200 + i * 120}ms`,
                     transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)",
                   }}
                 >
                   {i === lines.length - 1 ? (
-                    <span className="inline-flex items-center gap-2 sm:gap-5">
+                    <span className="inline-flex items-center gap-2 sm:gap-4">
                       {line}
-                      {/* Pill */}
                       <span
                         className={`inline-flex items-center justify-center shrink-0
-                          border-[3px] border-black rounded-full relative
+                          border-[2px] sm:border-[3px] border-black rounded-full relative
                           transition-all duration-500
-                          w-9 h-[18px] sm:w-12 sm:h-6 md:w-16 md:h-8
+                          w-7 h-3.5 sm:w-10 sm:h-5 md:w-14 md:h-7
                           ${visible ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}
                         style={{ transitionDelay: "1200ms" }}
                       >
-                        <span className="absolute rounded-full bg-[#b3f000] animate-ping opacity-40 w-2.5 h-2.5 sm:w-3 sm:h-3" />
-                        <span className="rounded-full bg-[#b3f000] relative z-10 w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                        <span className="absolute rounded-full bg-[#b3f000] animate-ping opacity-40 w-2 h-2 sm:w-2.5 sm:h-2.5" />
+                        <span className="rounded-full bg-[#b3f000] relative z-10 w-2 h-2 sm:w-2.5 sm:h-2.5" />
                       </span>
                     </span>
                   ) : line}
@@ -219,8 +216,8 @@ export function HowItWork() {
               <span
                 key={label}
                 className={`uppercase tracking-widest whitespace-nowrap
-                  text-[0.45rem] sm:text-[0.58rem] md:text-[1.98rem]
-                  px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2
+                  text-[0.42rem] sm:text-[0.55rem] md:text-[1.6rem]
+                  px-1.5 py-0.5 sm:px-3 sm:py-1.5 md:px-4 md:py-2
                   transition-all duration-500 cursor-default
                   ${i % 2 === 1 ? "bg-[#b3f000] text-black" : "bg-black text-[#f5f0e8]"}
                   ${visible ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}
@@ -238,45 +235,35 @@ export function HowItWork() {
           </div>
         </div>
 
-        {/* ── BOTTOM ROW ── */}
+        {/* BOTTOM ROW */}
         <div
-          className={`mt-10 sm:mt-14 flex flex-col sm:flex-row items-start sm:items-end
-            justify-between gap-5 sm:gap-10 transition-all duration-500
+          className={`mt-6 sm:mt-10 flex flex-col sm:flex-row items-start sm:items-end
+            justify-between gap-4 sm:gap-10 transition-all duration-500
             ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
           style={{ transitionDelay: "1100ms" }}
         >
-          {/* Left: description + CTA */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
             <div className="w-full h-px bg-black/10 sm:hidden" />
-            <p className="text-[0.68rem] sm:text-[0.72rem] uppercase tracking-[0.12em] leading-[1.9] text-neutral-500 max-w-xs sm:max-w-sm">
+            <p className="text-[0.6rem] sm:text-[0.68rem] uppercase tracking-[0.12em] leading-[1.8] text-neutral-500 max-w-xs sm:max-w-sm">
               From strategy and design to development and launch, we create
               high-converting websites that help your business attract leads and
               grow online.
             </p>
-            {/* CTA button */}
-            <div
-              className={`inline-flex items-center gap-3 group cursor-pointer transition-all duration-500
-                ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
-              style={{ transitionDelay: "1300ms" }}
-            >
-            </div>
           </div>
 
-          {/* Right: tagline + small badge */}
-          <div className="text-left sm:text-right shrink-0 flex flex-col items-start sm:items-end gap-2">
+          <div className="text-left sm:text-right shrink-0 flex flex-col items-start sm:items-end gap-1.5">
             <p
-              className="uppercase text-base sm:text-lg text-black leading-tight"
+              className="uppercase text-sm sm:text-base text-black leading-tight"
               style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.06em" }}
             >
               High-converting websites
             </p>
-            <p className="text-[0.55rem] sm:text-[0.6rem] uppercase tracking-[0.2em] text-neutral-400">
+            <p className="text-[0.5rem] sm:text-[0.55rem] uppercase tracking-[0.2em] text-neutral-400">
               that help you grow
             </p>
-            {/* Small live badge */}
-            <div className="flex items-center gap-1.5 mt-1">
+            <div className="flex items-center gap-1.5 mt-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#b3f000] animate-pulse" />
-              <span className="text-[0.5rem] uppercase tracking-[0.2em] text-neutral-400">
+              <span className="text-[0.48rem] uppercase tracking-[0.2em] text-neutral-400">
                 Currently taking projects
               </span>
             </div>
@@ -285,7 +272,7 @@ export function HowItWork() {
 
       </div>
 
-      {/* Decorative bottom corner ticks */}
+      {/* Bottom corner ticks */}
       <div className="absolute bottom-6 left-6 w-4 h-4 border-b-2 border-l-2 border-black/20" />
       <div className="absolute bottom-6 right-6 w-4 h-4 border-b-2 border-r-2 border-black/20" />
 

@@ -77,9 +77,10 @@ export function Services() {
 
   return (
     <section
+    
       ref={sectionRef}
-      className="service h-screen relative z-40 bg-[#f5f0e8] overflow-hidden"
-      style={{ boxShadow: "0 -32px 80px rgba(0,0,0,0.14)" }}
+      className="service  relative z-40 bg-[#f5f0e8] overflow-hidden mb-20 pb-20"
+      style={{ minHeight: '150dvh', boxShadow: "0 -32px 80px rgba(0,0,0,0.14)" }}
     >
       <div
         className={`absolute top-0 left-0 h-[2px] bg-black transition-all duration-1000 origin-left ${
@@ -131,7 +132,7 @@ export function Services() {
           </div>
         ))}
       </div>
-
+    
       <div className="absolute bottom-8 left-8 w-5 h-5 border-b-2 border-l-2 border-black/20" />
       <div className="absolute bottom-8 right-8 w-5 h-5 border-b-2 border-r-2 border-black/20" />
 

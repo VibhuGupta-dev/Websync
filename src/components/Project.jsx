@@ -176,9 +176,10 @@ export function Projects() {
   };
 
   return (
+    
     <section
       ref={sectionRef}
-      className="project relative z-20 bg-[#f5f0e8] px-4 sm:px-8 md:px-16 lg:px-24 pt-14 pb-14 sm:pt-20 sm:pb-20"
+      className="project relative z-20 bg-[#f5f0e8] px-4 sm:px-8 md:px-16 lg:px-24 pt-14 pb-24 mb-20 sm:pt-20 sm:pb-20"
       style={{ boxShadow: "0 -32px 80px rgba(0,0,0,0.08)" }}
     >
       {/* Top border */}
@@ -205,7 +206,7 @@ export function Projects() {
               className="uppercase text-black leading-none"
               style={{
                 fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "clamp(2.4rem, 7.5vw, 5.5rem)",
+                fontSize: "clamp(2.4rem, 7.5vw, 4.5rem)",
                 letterSpacing: "0.03em",
               }}
             >
@@ -291,7 +292,7 @@ export function Projects() {
               <button
                 key={i}
                 onClick={() => goToPage(i)}
-                className={`h-2 rounded-full transition-all duration-300 ${
+                className={`h-1 rounded-full transition-all duration-300 ${
                   i === currentPage ? "w-8 bg-black" : "w-2 bg-black/25 hover:bg-black/50"
                 }`}
               />
