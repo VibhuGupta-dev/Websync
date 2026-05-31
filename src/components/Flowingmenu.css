@@ -18,6 +18,7 @@
   overflow: hidden;
   text-align: center;
   border-top: 1px solid;
+  min-height: 1vh;
 }
 
 .menu__item:first-child {
@@ -29,13 +30,14 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  min-height: 10vh;
   position: relative;
   cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
   font-weight: 600;
-  font-size: 4vh;
+  font-size: clamp(20px, 4vh, 60px);
 }
 
 .menu__item-link:hover {
@@ -82,7 +84,7 @@
   white-space: nowrap;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 4vh;
+  font-size: clamp(20px, 4vh, 60px);
   line-height: 1;
   padding: 0 1vw;
 }

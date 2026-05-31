@@ -26,29 +26,29 @@ export function App() {
         pinSpacing: false,
       });
 
-      ScrollTrigger.create({
-        trigger: ".howitwork",
-        start: "top top",
-        end: "bottom top",
-        pin: true,
-        pinSpacing: false,
-      });
+      // ScrollTrigger.create({
+      //   trigger: ".howitwork",
+      //   start: "top top",
+      //   end: "bottom top",
+      //   pin: true,
+      //   pinSpacing: false,
+      // });
 
-      ScrollTrigger.create({
-        trigger: ".project",
-        start: "top top",
-        end: "bottom top",
-        pin: true,
-        pinSpacing: false,
-      });
+      // ScrollTrigger.create({
+      //   trigger: ".project",
+      //   start: "top top",
+      //   end: "bottom top",
+      //   pin: true,
+      //   pinSpacing: false,
+      // });
 
-      ScrollTrigger.create({
-        trigger: ".service",
-        start: "top top",
-        end: "bottom top",
-        pin: true,
-        pinSpacing: false,
-      });
+      // ScrollTrigger.create({
+      //   trigger: ".service",
+      //   start: "top top",
+      //   end: "bottom top",
+      //   pin: true,
+      //   pinSpacing: false,
+      // });
     });
 
     return () => ctx.revert();

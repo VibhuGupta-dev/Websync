@@ -49,7 +49,7 @@ export function Footer() {
   return (
     <footer
       ref={sectionRef}
-      className="relative z-60 bg-[#1a1a1a] h-200 flex flex-col justify-between overflow-hidden"
+      className="relative z-60 bg-[#1a1a1a] h-150 flex flex-col justify-between overflow-hidden"
       style={{ boxShadow: "0 -32px 80px rgba(0,0,0,0.3)" }}
     >
 

@@ -179,7 +179,7 @@ export function Projects() {
     
     <section
       ref={sectionRef}
-      className="project relative z-20 bg-[#f5f0e8] px-4 sm:px-8 md:px-16 lg:px-24 pt-14 pb-24 mb-20 sm:pt-20 sm:pb-20"
+      className="project relative z-20 bg-[#f5f0e8] px-4 sm:px-8 md:px-16 lg:px-24 pt-14 pb-24 mb-sm:pt-20 sm:pb-20"
       style={{ boxShadow: "0 -32px 80px rgba(0,0,0,0.08)" }}
     >
       {/* Top border */}
