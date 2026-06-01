@@ -28,7 +28,7 @@ export function UpperNavbar({ navbarRef }) {
   const menuToggleRef = useRef(null);
 
   const handleBookCall = () => {
-    window.open("https://cal.com/vibhu-gupta-d2rvc8/websync", "_blank", "noopener,noreferrer");
+    window.open("https://cal.com/websync.co.in/bookmeeting", "_blank", "noopener,noreferrer");
   };
 
   // Scroll to section + close menu
