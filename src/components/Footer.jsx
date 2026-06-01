@@ -201,7 +201,7 @@ export function Footer() {
             href="mailto:websync.co@gmail.com"
             className="text-white/40 text-[13px] tracking-[0.1em] hover:text-[#b3f000] transition-colors duration-200"
           >
-            websync.co@gmail.com
+            websync.co.in@gmail.com
           </a>
         </div>
 
